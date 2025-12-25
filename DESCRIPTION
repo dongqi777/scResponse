@@ -1,0 +1,27 @@
+Package: scResponse
+Title: Response Scoring for Single-Cell RNA-seq Data
+Version: 0.1.0
+Authors@R: 
+  c(
+    person("Qi", "Dong", role = "aut"),
+    person("Yuzheng", "Chen" , email = "yuzhengc46@gmail.com", role = c("aut", "cre"))
+    )
+Description: Tools for computing response-associated enrichment
+    scores based on ranked gene expression in single-cell RNA-seq data.
+    The package implements lightweight scoring and visualization
+    functions without relying on large external frameworks.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Imports:
+    ggplot2,
+    stats,
+    utils,
+    graphics,
+    grDevices,
+    rlang
+Suggests:
+    Seurat,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
