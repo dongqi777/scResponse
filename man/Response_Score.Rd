@@ -2,13 +2,13 @@
 % Please edit documentation in R/Response_Score.R
 \name{Response_Score}
 \alias{Response_Score}
-\title{Compute response enrichment score for each cell}
+\title{Compute response enrichment score for each analysis unit}
 \usage{
 Response_Score(mat, topN = 1500, nGenes = 10000, cancer)
 }
 \arguments{
-\item{mat}{A numeric matrix of gene expression values,
-with genes as rows and cells as columns.}
+\item{mat}{A numeric expression matrix,
+with genes as rows and analysis units as columns.}
 
 \item{topN}{Integer. Number of top-ranked genes used to compute
 the cumulative enrichment score. Default is 3000.}
@@ -17,14 +17,16 @@ the cumulative enrichment score. Default is 3000.}
 position weighting. Default is 10000.}
 
 \item{cancer}{Character string specifying cancer type.
-Must be one of the supported cancer codes ("NSCLC","MEL","HCC","BLCA","RCC","BC","GC","ESCA","HNSC","GBM","CRC").}
+Must be one of the supported cancer codes
+("NSCLC","MEL","HCC","BLCA","RCC","BC","GC","ESCA","HNSC","GBM","CRC").}
 }
 \value{
 A numeric vector of normalized enrichment scores,
-named by cell IDs.
+named by analysis unit IDs.
 }
 \description{
-This function calculates a normalized enrichment score (AUC-like score)
-for each cell based on ranked gene expression and pre-trained gene
-differential weights for a given cancer type.
+This function calculates a normalized enrichment score
+(AUC-like score) for each analysis unit based on ranked gene
+expression and pre-trained gene differential weights
+for a given cancer type.
 }

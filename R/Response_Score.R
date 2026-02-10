@@ -1,20 +1,22 @@
-#' Compute response enrichment score for each cell
+#' Compute response enrichment score for each analysis unit
 #'
-#' This function calculates a normalized enrichment score (AUC-like score)
-#' for each cell based on ranked gene expression and pre-trained gene
-#' differential weights for a given cancer type.
+#' This function calculates a normalized enrichment score
+#' (AUC-like score) for each analysis unit based on ranked gene
+#' expression and pre-trained gene differential weights
+#' for a given cancer type.
 #'
-#' @param mat A numeric matrix of gene expression values,
-#'   with genes as rows and cells as columns.
+#' @param mat A numeric expression matrix,
+#'   with genes as rows and analysis units as columns.
 #' @param topN Integer. Number of top-ranked genes used to compute
 #'   the cumulative enrichment score. Default is 3000.
 #' @param nGenes Integer. Total number of detected genes used for
 #'   position weighting. Default is 10000.
 #' @param cancer Character string specifying cancer type.
-#'   Must be one of the supported cancer codes ("NSCLC","MEL","HCC","BLCA","RCC","BC","GC","ESCA","HNSC","GBM","CRC").
+#'   Must be one of the supported cancer codes
+#'   ("NSCLC","MEL","HCC","BLCA","RCC","BC","GC","ESCA","HNSC","GBM","CRC").
 #'
 #' @returns A numeric vector of normalized enrichment scores,
-#'   named by cell IDs.
+#'   named by analysis unit IDs.
 #'
 #' @export
 Response_Score <- function(mat, topN = 1500, nGenes = 10000, cancer) {

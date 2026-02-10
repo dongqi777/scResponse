@@ -18,8 +18,8 @@ Plot_GroupScore(
 )
 }
 \arguments{
-\item{meta}{A \code{data.frame} containing per-cell metadata.
-Rows correspond to cells or samples.}
+\item{meta}{A \code{data.frame} containing per-unit metadata.
+Rows correspond to analysis units.}
 
 \item{group}{Character scalar. Column name in \code{meta} defining
 the grouping variable on the x-axis.
@@ -56,13 +56,14 @@ A \code{ggplot2} object.
 }
 \description{
 Visualize the distribution of enrichment (response) scores across
-predefined cell groups using violin and box plots.
+predefined groups of analysis units using violin and box plots.
 }
 \details{
 This function operates directly on a metadata \code{data.frame},
-making it independent of any specific single-cell framework
-(e.g. Seurat). Each row in \code{meta} is assumed to represent
-one cell or sample.
+making it independent of any specific transcriptomic modality
+or analysis framework (e.g. single-cell or spatial data).
+Each row in \code{meta} is assumed to represent one analysis unit,
+such as a cell or a spatial spot.
 
 Groups on the x-axis are ordered by the median value of the
 enrichment score within each group, in decreasing order.

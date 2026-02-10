@@ -1,16 +1,21 @@
-#' Plot enrichment score curve for a single cell
+#' Plot enrichment score curve for a single analysis unit
 #'
 #' This function visualizes the cumulative enrichment score curve
-#' for a specified cell, highlighting the dominant deviation,
+#' for a specified analysis unit, highlighting the dominant deviation,
 #' enrichment direction, and contributing gene ranks.
 #'
-#' @param mat A numeric matrix of gene expression values,
-#'   with genes as rows and cells as columns.
-#' @param cell_id Character string specifying the target cell ID
+#' An analysis unit can represent a single cell in single-cell data,
+#' a spatial spot in spatial transcriptomics, or any other expression unit
+#' represented by a column in the input matrix.
+#'
+#' @param mat A numeric expression matrix,
+#'   with genes as rows and analysis units as columns.
+#' @param cell_id Character string specifying the target analysis unit ID
 #'   (must match a column name in \code{mat}).
 #' @param cancer Character string specifying cancer type used to
 #'   load pre-trained gene differential weights.
-#'   Cancer type must be one of the supported cancer codes ("NSCLC","MEL","HCC","BLCA","RCC","BC","GC","ESCA","HNSC","GBM","CRC").
+#'   Cancer type must be one of the supported cancer codes
+#'   ("NSCLC","MEL","HCC","BLCA","RCC","BC","GC","ESCA","HNSC","GBM","CRC").
 #' @param topN Integer. Number of top-ranked genes used to build
 #'   the enrichment curve. Default is 3000.
 #' @param nGenes Integer. Total number of detected genes used for
